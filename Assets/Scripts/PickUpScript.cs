@@ -11,6 +11,9 @@ public class PickUpScript : MonoBehaviour
     //Checks if there is a pickup in front of the hand
     bool objectInFront;
 
+    //Check if there is an interactable object in front
+    public bool interactableInFront;
+
     //This is the item that the player is holding
     public Transform heldItem;
 
@@ -34,6 +37,9 @@ public class PickUpScript : MonoBehaviour
 
     //This bool is used by the pickups. The item is used when it is true.
     public bool useItem;
+
+    //This bool is used by the interactable items. 
+    public bool useInteract;
 
 
     void Start()
@@ -67,10 +73,15 @@ public class PickUpScript : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 
-            //Check if the raycast hits a pickup or an item
+            //Check if the raycast hits a pickup or an interactable item
             if (!hit.collider.CompareTag("Interactable"))
             {
                 objectInFront = true;
+            }
+            else
+            {
+                interactableInFront = true;
+                objectInFront = false;
             }
 
             //Place the sparkle on the right item and turn it on
@@ -86,6 +97,7 @@ public class PickUpScript : MonoBehaviour
 
             //Tell us that there is nothing in front of the hand and that we don't need the sparkle
             objectInFront = false;
+            interactableInFront = false;
             selectionSparkle.SetActive(false);
         }
 
@@ -96,6 +108,7 @@ public class PickUpScript : MonoBehaviour
             //Check if the hand is holding something. 
             if(heldItem == null)
             {
+                //Pick the object up
                 if (objectInFront)
                 {
                     Debug.Log("Picked up " + hit.collider.gameObject.name);
@@ -109,6 +122,11 @@ public class PickUpScript : MonoBehaviour
                     heldItem.transform.rotation = gameObject.transform.rotation;
                     heldItem.transform.position = slot.position;
                     heldItem.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                }
+                //Use the interactable
+                if (interactableInFront)
+                {
+                    useInteract = true;
                 }
 
             }

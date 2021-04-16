@@ -34,6 +34,14 @@ public class GunScript : MonoBehaviour
     //Set the key that toggles the automatic or single fire mode
     KeyCode automaticKey = KeyCode.LeftShift;
 
+    //The material of the ammo bar
+    Renderer ammoMat;
+
+    //Set material of the ammo bar in single fire mode
+    [SerializeField] Material ammoMatSingle;
+
+    //Set material of the ammo bar in automatic fire mode
+    [SerializeField] Material ammoMatAuto;
 
     void Start()
     {
@@ -42,6 +50,8 @@ public class GunScript : MonoBehaviour
         ammoCounter = gameObject.transform.GetChild(1).transform;
         pickUpScript = null;
         ammo = initialAmmo;
+        ammoMat = ammoCounter.GetChild(0).GetComponent<MeshRenderer>();
+
     }
 
     void Update()
@@ -64,16 +74,19 @@ public class GunScript : MonoBehaviour
                 automaticKey = KeyCode.RightShift;
             }
 
-            //Toggle automatic and single fire mode
+            //Toggle automatic and single fire mode and assign the right material
             if (Input.GetKeyDown(automaticKey))
             {
+
                 if (automatic)
                 {
                     automatic = false;
+                    ammoMat.material = ammoMatSingle;
                 }
                 else
                 {
                     automatic = true;
+                    ammoMat.material = ammoMatAuto;
                 }
             }
 
@@ -109,6 +122,9 @@ public class GunScript : MonoBehaviour
 
         //Create the bullet
         GameObject bullet = Instantiate((GameObject)Resources.Load("Bullet"), origin.position, origin.rotation) as GameObject;
+
+        //Give the bulletthe right material
+        bullet.GetComponent<MeshRenderer>().material = ammoMat.material;
 
         //Make the bullet go fast
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.up * bulletSpeed, ForceMode.Impulse);

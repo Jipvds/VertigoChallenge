@@ -12,8 +12,8 @@ public class HeldItemsScript : MonoBehaviour
     public Transform headSlot;
 
     //What are the left and the right hand
-    [SerializeField] GameObject leftHand;
-    [SerializeField] GameObject rightHand;
+    public GameObject leftHand;
+    public GameObject rightHand;
 
 
 

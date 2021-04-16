@@ -11,20 +11,20 @@ public class AmmoMachineScript : MonoBehaviour
     [SerializeField] GameObject vendingItem;
 
     //The player that is standing in front of the machine
-    GameObject player;
+    public GameObject player;
 
-    //The hand that presses the button 
-    HeldItemsScript heldItemScript;
+    //Left hand that presses the button 
+    public  PickUpScript heldItemScriptLeft;
 
-
-    public bool isPressed; 
-
+    //Right hand that presses the button
+    PickUpScript heldItemScriptRight;
 
     void Start()
     {
         //Make sure everything is reset
         player = null;
-        heldItemScript = null;       
+        heldItemScriptLeft = null;
+        heldItemScriptRight = null;
         lightbulb = transform.GetChild(0).gameObject;
        
     }
@@ -34,22 +34,11 @@ public class AmmoMachineScript : MonoBehaviour
         //Check if there is a player in front of the machine
         if(player != null)
         {
-            //Check what hand presses the button and if it is already holding anything
-            if(heldItemScript.itemLeft == null && Input.GetKeyDown(KeyCode.Q))
+            //Check if the hands want to use the machine and deploy the item
+            if (heldItemScriptLeft.useInteract || heldItemScriptRight.useInteract)
             {
-                isPressed = true;
-            }           
-            if(heldItemScript.itemRight == null && Input.GetKeyDown(KeyCode.E))
-            {
-
-                isPressed = true;            
+                deployAmmo();
             }
-        }
-
-        //Deploy the item if the button is pressed
-        if (isPressed)
-        {
-            deployAmmo();
         }
     }
 
@@ -59,7 +48,8 @@ public class AmmoMachineScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player = other.gameObject;
-            heldItemScript = player.GetComponent<HeldItemsScript>();
+            heldItemScriptLeft = player.GetComponent<HeldItemsScript>().leftHand.GetComponent<PickUpScript>();
+            heldItemScriptRight = player.GetComponent<HeldItemsScript>().rightHand.GetComponent<PickUpScript>();
         }
     }
 
@@ -69,14 +59,16 @@ public class AmmoMachineScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player = null;
-            heldItemScript = null;
+            heldItemScriptLeft = null;
+            heldItemScriptRight = null;
         }
     }
 
     void deployAmmo()
     {
         //Make sure that only 1 item is deployed
-        isPressed = false;
+        heldItemScriptLeft.useInteract = false;
+        heldItemScriptRight.useInteract = false;
 
         //Deploy the item
         GameObject newAmmoClip = Instantiate(vendingItem, lightbulb.transform.position, lightbulb.transform.rotation, null);
