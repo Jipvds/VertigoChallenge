@@ -8,6 +8,7 @@ TagManager:
   - Hat
   - Head
   - Interactable
+  - Hand
   layers:
   - Default
   - TransparentFX

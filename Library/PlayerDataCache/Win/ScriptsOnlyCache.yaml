@@ -295,7 +295,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 4688ed8c43559a27c4990e51b45a2656
+      Hash: 30a5d085f13afe2e16451cfa58bce602
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HatScript
@@ -307,7 +307,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: b9048d3760274b9fd3dc94b75b3d0f96
+      Hash: dbd5c81cfdb2bacc92afefc1d3605ce8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RockScript
@@ -361,7 +361,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: ed5df88a4726f340f2da4d47e905a829
+      Hash: 5b208a5daab17ee8881e9001eff4b8eb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FlashlightScript
@@ -421,7 +421,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: f3c04c251f2c161185be21be813aba7f
+      Hash: 3b6446c9c10e09585e43cba4dafdf995
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AmmoClipScript
@@ -433,7 +433,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 2148300f257c19887aa8bd153ca794cd
+      Hash: 47974cd04a9477e855d306f8958eb2e3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GunScript
@@ -575,6 +575,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 5b208a5daab17ee8881e9001eff4b8eb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UsableObject
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

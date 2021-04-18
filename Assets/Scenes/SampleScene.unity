@@ -496,6 +496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7193556ce9a6f4cad3b64456361330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  pickUpScript: {fileID: 0}
+  isPickedUp: 0
   headSlot: {fileID: 0}
 --- !u!54 &101447537
 Rigidbody:
@@ -1469,7 +1472,7 @@ GameObject:
   - component: {fileID: 236604844}
   m_Layer: 0
   m_Name: HandR
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2053,6 +2056,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdb18d6cb0837d41bd4e44a7329bf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  pickUpScript: {fileID: 0}
+  isPickedUp: 0
   force: 25
 --- !u!135 &376786570
 SphereCollider:
@@ -3359,7 +3365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135b0f495a2e3dd4da5d6facb22c38de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightOn: 1
+  rb: {fileID: 0}
+  pickUpScript: {fileID: 0}
+  isPickedUp: 0
 --- !u!54 &675191763
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4601,7 +4609,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135b0f495a2e3dd4da5d6facb22c38de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightOn: 0
+  rb: {fileID: 0}
+  pickUpScript: {fileID: 0}
+  isPickedUp: 0
 --- !u!54 &929941863
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4682,6 +4692,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdb18d6cb0837d41bd4e44a7329bf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  pickUpScript: {fileID: 0}
+  isPickedUp: 0
   force: 25
 --- !u!135 &937831648
 SphereCollider:
@@ -4955,6 +4968,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdb18d6cb0837d41bd4e44a7329bf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  pickUpScript: {fileID: 0}
+  isPickedUp: 0
   force: 25
 --- !u!135 &984262552
 SphereCollider:
@@ -5323,7 +5339,7 @@ GameObject:
   - component: {fileID: 1208916095}
   m_Layer: 0
   m_Name: HandL
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5641,6 +5657,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdb18d6cb0837d41bd4e44a7329bf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  pickUpScript: {fileID: 0}
+  isPickedUp: 0
   force: 25
 --- !u!135 &1279277644
 SphereCollider:
@@ -6161,6 +6180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdb18d6cb0837d41bd4e44a7329bf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  pickUpScript: {fileID: 0}
+  isPickedUp: 0
   force: 25
 --- !u!135 &1415090032
 SphereCollider:

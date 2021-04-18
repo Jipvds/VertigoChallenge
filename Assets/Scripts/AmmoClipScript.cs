@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmmoClipScript : MonoBehaviour
+public class AmmoClipScript : UsableObject
 {
     //How much ammo can the clip hold and how much is in it
     [SerializeField] float initialAmmo = 25;
@@ -11,49 +11,32 @@ public class AmmoClipScript : MonoBehaviour
     //In what hand are we holding the ammo clip. 
     bool isRight;
 
-    //This talks to the hand
-    PickUpScript pickUpScript;
-
     //This shows us how many bullets we have left in the clip
     Transform ammoCounter;
 
 
-    void Start()
+    public override void Initialize()
     {
-        //Initialize the things
-        pickUpScript = null; 
+        base.Initialize();
         ammoCounter = gameObject.transform.GetChild(0).transform;
     }
 
-    void Update()
+    public override void Update()
     {
-        //Get the hand that feeds us. Only when the item gets picked up
-        if (transform.parent != null)
+        base.Update();
+
+        if (isPickedUp)
         {
-            pickUpScript = transform.parent.gameObject.GetComponent<PickUpScript>();
-
-            //Check if the hand want to use the item, but only if there are bullets left
-            if (pickUpScript.useItem)
-            {
-                if (ammo > 0)
-                {
-                    Use();
-                }
-            }
-
-            //Check if this is being held in right or the left hand
             isRight = pickUpScript.isRight;
-        }
-        //If there is no hand to feed us we set this to null
-        else
-        {
-            pickUpScript = null;
         }
     }
 
-    void Use()
+    public override void Use()
     {
-        Debug.Log("Use Ammo Clip");
+        if (ammo > 0)
+        {
+
+            Debug.Log("Use Ammo Clip");
 
         //Tell the hand we only want to be used once
         pickUpScript.useItem = false;
@@ -87,7 +70,7 @@ public class AmmoClipScript : MonoBehaviour
 
                     Debug.Log(gunAmmo);
 
-                 // Check if we need to reload the gun. We don't need to reload a gun that's full
+                    // Check if we need to reload the gun. We don't need to reload a gun that's full
                     if (gunAmmo < gunInitialAmmo)
                     {
                         //Calculate how many bullets we need to add to the gun and how much needs to be removed from the ammo clip. 
@@ -98,7 +81,7 @@ public class AmmoClipScript : MonoBehaviour
                             ammo -= difference;
                             gunScript.ammo = gunScript.initialAmmo;
 
-                        //Update the ammo bar
+                            //Update the ammo bar
                             float ammoPercentage = 1 * (ammo / initialAmmo);
                             ammoCounter.localScale = new Vector3(ammoCounter.localScale.x, ammoCounter.localScale.y, ammoPercentage);
                         }
@@ -108,12 +91,13 @@ public class AmmoClipScript : MonoBehaviour
                             gunScript.ammo += ammo;
                             ammo = 0;
 
-                        //Set the ammo bar to zero
+                            //Set the ammo bar to zero
                             ammoCounter.localScale = new Vector3(ammoCounter.localScale.x, ammoCounter.localScale.y, 0);
                         }
                     }
 
-                }     
+                }
+            }
         }
     }
 }
