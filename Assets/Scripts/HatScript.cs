@@ -12,10 +12,12 @@ public class HatScript : UsableObject
     {
         base.Update();
 
+        //Check if the item is parented to the head and not the hand
         if (isPickedUp)
         {
             if (transform.parent.CompareTag("Head"))
             {
+                //Drop the hat and reset it
                 if (Input.GetMouseButtonDown(2))
                 {
                     transform.parent = null;

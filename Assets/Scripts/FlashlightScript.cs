@@ -7,7 +7,7 @@ public class FlashlightScript : UsableObject
     //This is the light of the flashlight
     GameObject lightSource;
 
-
+    //initialize the pickup specific things
     public override void Initialize()
     {
         base.Initialize();

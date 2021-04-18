@@ -40,6 +40,7 @@ public class GunScript : UsableObject
     //Set material of the ammo bar in automatic fire mode
     [SerializeField] Material ammoMatAuto;
 
+    //initialize the pickup specific things
     public override void Initialize()
     {
         base.Initialize();
@@ -60,13 +61,19 @@ public class GunScript : UsableObject
         //make sure that we don't have too many bullets in the gun
         ammo = Mathf.Clamp(ammo, 0, initialAmmo);
 
+        //Set the right key for changing automatic and single fire mode
         if (isPickedUp)
         {
             if (pickUpScript.isRight)
             {
                 automaticKey = KeyCode.RightShift;
             }
+            else
+            {
+                automaticKey = KeyCode.LeftShift;
+            }
 
+            //Set the gun to automatic or single 
             if (Input.GetKeyDown(automaticKey))
             {
 

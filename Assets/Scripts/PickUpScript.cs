@@ -60,7 +60,6 @@ public class PickUpScript : MonoBehaviour
 
     }
 
-
     void Update()
     {
 

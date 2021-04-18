@@ -14,27 +14,22 @@ public class AmmoClipScript : UsableObject
     //This shows us how many bullets we have left in the clip
     Transform ammoCounter;
 
-
+    //initialize the pickup specific things
     public override void Initialize()
     {
         base.Initialize();
         ammoCounter = gameObject.transform.GetChild(0).transform;
     }
 
-    public override void Update()
-    {
-        base.Update();
-
-        if (isPickedUp)
-        {
-            isRight = pickUpScript.isRight;
-        }
-    }
-
     public override void Use()
     {
         if (ammo > 0)
         {
+            //Check if the clip is picked up and what hand is holding it
+            if (isPickedUp)
+            {
+                isRight = pickUpScript.isRight;
+            }
 
             Debug.Log("Use Ammo Clip");
 
