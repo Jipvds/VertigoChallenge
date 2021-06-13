@@ -499,7 +499,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   pickUpScript: {fileID: 0}
   isPickedUp: 0
-  headSlot: {fileID: 0}
 --- !u!54 &101447537
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -611,7 +610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaaa678defa3f814299428f3a88e7c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
 --- !u!114 &102263237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,8 +622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56337e0038937334c8ea520609827594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemLeft: {fileID: 0}
-  itemRight: {fileID: 0}
   headSlot: {fileID: 689397720}
   leftHand: {fileID: 1208916090}
   rightHand: {fileID: 236604839}
@@ -1566,13 +1562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 2.5
-  interactableInFront: 0
-  heldItem: {fileID: 0}
-  slot: {fileID: 0}
   isRight: 1
-  heldItemScript: {fileID: 0}
-  useItem: 0
-  useInteract: 0
 --- !u!1 &264105353
 GameObject:
   m_ObjectHideFlags: 0
@@ -4843,7 +4833,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 30
-  playerBody: {fileID: 0}
 --- !u!1 &971647518
 GameObject:
   m_ObjectHideFlags: 0
@@ -5064,8 +5053,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vendingItem: {fileID: 3188703754690709601, guid: 693a4f18bb75d034da1293e3f3da9c7c,
     type: 3}
-  player: {fileID: 0}
-  heldItemScriptLeft: {fileID: 0}
 --- !u!4 &998936628
 Transform:
   m_ObjectHideFlags: 0
@@ -5433,13 +5420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 2.5
-  interactableInFront: 0
-  heldItem: {fileID: 0}
-  slot: {fileID: 0}
   isRight: 0
-  heldItemScript: {fileID: 0}
-  useItem: 0
-  useInteract: 0
 --- !u!1 &1229394080
 GameObject:
   m_ObjectHideFlags: 0
@@ -7525,8 +7506,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vendingItem: {fileID: 5774688518382454895, guid: cba9402f4a1994d48bcc3e81986ceafd,
     type: 3}
-  player: {fileID: 0}
-  heldItemScriptLeft: {fileID: 0}
 --- !u!4 &1715486586
 Transform:
   m_ObjectHideFlags: 0
@@ -12440,8 +12419,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vendingItem: {fileID: 6514121899895514041, guid: 5d2ca8796b3efdb4a807e86cd711efcb,
     type: 3}
-  player: {fileID: 0}
-  heldItemScriptLeft: {fileID: 0}
 --- !u!65 &1763308864
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -64,18 +64,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AmmoClipScript.cs" />
-    <Compile Include="Assets\Scripts\AmmoMachineScript.cs" />
-    <Compile Include="Assets\Scripts\FlashlightScript.cs" />
-    <Compile Include="Assets\Scripts\GunScript.cs" />
-    <Compile Include="Assets\Scripts\HatScript.cs" />
-    <Compile Include="Assets\Scripts\HeldItemsScript.cs" />
-    <Compile Include="Assets\Scripts\MouseLook.cs" />
-    <Compile Include="Assets\Scripts\PickUpScript.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\QuitScript.cs" />
-    <Compile Include="Assets\Scripts\RockScript.cs" />
-    <Compile Include="Assets\Scripts\UsableObject.cs" />
+    <Compile Include="Assets\Scripts\GeneralScripts\QuitScript.cs" />
+    <Compile Include="Assets\Scripts\ItemScripts\AmmoClipScript.cs" />
+    <Compile Include="Assets\Scripts\ItemScripts\AmmoMachineScript.cs" />
+    <Compile Include="Assets\Scripts\ItemScripts\FlashlightScript.cs" />
+    <Compile Include="Assets\Scripts\ItemScripts\GunScript.cs" />
+    <Compile Include="Assets\Scripts\ItemScripts\HatScript.cs" />
+    <Compile Include="Assets\Scripts\ItemScripts\RockScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\HeldItemsScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PickUpScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\UsableObject.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

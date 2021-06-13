@@ -1,12 +1,12 @@
 Move 	-> WASD / Arrow keys
 Camera	-> Mouse
 
-Pick things up with the right hand	-> Q
-Pick things up with the left hand	-> E
+Pick things up with the left hand	-> Q
+Pick things up with the right hand	-> E
 
 Use the item in the left hand		-> Left mouse button
 Use the item in the right hand		-> Right mouse button
 
-Unequip the hat		-> Middle mouse button
+Unequip the hat				-> Middle mouse button
 
 Toggle automatic/single fire 		-> Left or right shift (depending on the hand that is holding the gun)
